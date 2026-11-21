@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivek | AI & Web Developer Portfolio</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, sans-serif; }
+        body { background: #050814; color: #f8fafc; line-height: 1.6; }
+        header { background: linear-gradient(135deg, #0f172a, #1e1b4b); padding: 45px 20px; text-align: center; border-bottom: 2px solid #312e81; }
+        .badge { display: inline-block; background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid #38bdf8; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; margin-bottom: 12px; }
+        header h1 { font-size: 34px; font-weight: 900; color: #fff; margin-bottom: 8px; }
+        header h1 span { color: #38bdf8; }
+        header p { color: #cbd5e1; max-width: 620px; margin: 0 auto 20px; font-size: 15px; }
+        .stats { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+        .stat-box { background: rgba(15, 23, 42, 0.85); border: 1px solid #334155; padding: 10px 18px; border-radius: 12px; font-size: 13px; font-weight: bold; color: #facc15; }
+        .container { max-width: 1050px; margin: 35px auto; padding: 0 20px; }
+        .sec-title { font-size: 22px; color: #38bdf8; margin-bottom: 20px; border-left: 4px solid #38bdf8; padding-left: 12px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: #0f172a; border: 1px solid #1e293b; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; transition: 0.25s; box-shadow: 0 8px 20px rgba(0,0,0,0.35); }
+        .card:hover { transform: translateY(-5px); border-color: #38bdf8; }
+        .tag { display: inline-block; font-size: 11px; font-weight: bold; padding: 4px 10px; border-radius: 6px; margin-bottom: 10px; width: fit-content; }
+        .t-ai { background: #312e81; color: #a5b4fc; }
+        .t-web { background: #064e3b; color: #6ee7b7; }
+        .t-game { background: #701a75; color: #f5d0fe; }
+        .t-fin { background: #713f12; color: #fde047; }
+        .card h3 { font-size: 19px; color: #fff; margin-bottom: 8px; }
+        .card p { font-size: 13.5px; color: #94a3b8; margin-bottom: 18px; }
+        .btn-row { display: flex; gap: 10px; }
+        .open-btn { flex: 1; text-align: center; background: linear-gradient(135deg, #0284c7, #2563eb); color: #fff; text-decoration: none; padding: 11px; border-radius: 10px; font-weight: bold; font-size: 14px; }
+        .open-btn:hover { background: linear-gradient(135deg, #0ea5e9, #3b82f6); }
+        .edit-btn { background: #1e293b; color: #cbd5e1; border: 1px solid #334155; padding: 0 12px; border-radius: 10px; cursor: pointer; font-size: 13px; }
+        footer { text-align: center; padding: 28px 20px; border-top: 1px solid #1e293b; color: #64748b; font-size: 13px; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="badge">★ AI & FULL-STACK WEB DEVELOPER</div>
+    <h1>Hi, I'm <span>Vivek</span> 👋</h1>
+    <p>Class 9th AI Developer at A.S.M Convent School, Sukhpura, Ballia (U.P.). Building real-world Voice AI Assistants, School Portals, 3D Web Games & FinTech Tools.</p>
+    <div class="stats">
+        <div class="stat-box">🚀 6+ Live Projects</div>
+        <div class="stat-box">🤖 Voice AI & Web Apps</div>
+        <div class="stat-box">🏫 A.S.M Convent School</div>
+    </div>
+</header>
+<div class="container">
+    <h2 class="sec-title">🔥 My Live Projects (Click to Open Directly)</h2>
+    <div class="grid" id="projectGrid"></div>
+</div>
+
+<footer>
+    Designed & Developed by <strong>Vivek</strong> • All Projects Hosted Live on GitHub Pages
+</footer>
+
+<script>
+    const defaultProjects = [
+        {
+            id: "p1",
+            tag: "🤖 VOICE AI ASSISTANT",
+            tagClass: "t-ai",
+            title: "Vivek Hindi & English Voice AI",
+            desc: "Personal Voice-to-Voice AI Assistant that greets by name, listens via microphone, and answers questions aloud in Hindi & English.",
+            url: "https://github.io"
+        },
+        {
+            id: "p2",
+            tag: "🏫 OFFICIAL SCHOOL PORTAL",
+            tagClass: "t-web",
+            title: "A.S.M Convent School Website",
+            desc: "Complete responsive school website for A.S.M Convent School Sukhpura, Ballia with Principal, Faculty, Labs & Admission Inquiry.",
+            url: "https://github.io"
+        },
+        {
+            id: "p3",
+            tag: "🎮 3D HIGHWAY SIMULATOR",
+            tagClass: "t-game",
+            title: "Highway Pro 3D: Car & Bus Game",
+            desc: "Full-screen Play Store style driving simulator featuring Sports Car & Luxury Bus modes, Day/Night weather, and sound effects.",
+            url: "https://github.io"
+        },
+        {
+            id: "p4",
+            tag: "🧾 FREELANCE BUSINESS TOOL",
+            tagClass: "t-fin",
+            title: "Freelance Invoice Maker Pro",
+            desc: "Professional GST & client invoice generator with instant calculation, custom branding, and print/PDF export support.",
+            url: "https://github.io"
+        },
+        {
+            id: "p5",
+            tag: "📊 TRADING & RISK TOOL",
+            tagClass: "t-fin",
+            title: "Smart Gold (XAU/USD) Lot Calculator",
+            desc: "Precision risk management and lot size calculator built for XAU/USD traders with instant stop-loss & margin insights.",
+            url: "https://github.io"
+        }
+    ];
+
+    let savedLinks = JSON.parse(localStorage.getItem("vivek_portfolio_links") || "{}");
+
+    function renderProjects() {
+        const grid = document.getElementById("projectGrid");
+        grid.innerHTML = "";
+        defaultProjects.forEach(p => {
+            const liveUrl = savedLinks[p.id] || p.url;
+            const card = document.createElement("div");
+            card.className = "card";
+            card.innerHTML = `
+                <div>
+                    <span class="tag ${p.tagClass}">${p.tag}</span>
+                    <h3>${p.title}</h3>
+                    <p>${p.desc}</p>
+                </div>
+                <div class="btn-row">
+                    <a href="${liveUrl}" target="_blank" rel="noopener noreferrer" class="open-btn">Open Live App ↗</a>
+                    <button class="edit-btn" onclick="editLink('${p.id}', '${liveUrl}')" title="Change URL">⚙️</button>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    function editLink(id, currentUrl) {
+        const newUrl = prompt("Is project ka naya direct link (https://...) paste karein:", currentUrl);
+        if (newUrl && newUrl.trim().startsWith("http")) {
+            savedLinks[id] = newUrl.trim();
+            localStorage.setItem("vivek_portfolio_links", JSON.stringify(savedLinks));
+            renderProjects();
+        }
+    }
+
+    renderProjects();
+</script>
+</body>
+</html>
